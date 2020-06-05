@@ -7,7 +7,8 @@
 		"sampctl/samp-stdlib",
 		"pBlueG/SA-MP-MySQL",
 		"samp-incognito/samp-streamer-plugin",
-		"maddinat0r/sscanf"
+		"maddinat0r/sscanf",
+		"urShadow/Pawn.CMD"
 	],
 	"runtime": {
 		"version": "0.3.7",
