@@ -5,7 +5,7 @@
 ## Installation
 
 ```bash
-sampctl package install cadhead/better-valakas-gm
+sampctl package get cadhead/better-valakas-gm
 ```
 
 ## Build
