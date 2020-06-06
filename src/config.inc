@@ -36,8 +36,14 @@
 #define ALLOWED_NICK_SYMBOLS       'a'..'z','A'..'Z','0'..'9','_','[',']','.','=','(',')'
 #define ALLOWED_NICK_SYMBOLS_STR   "'a'..'z','A'..'Z','0'..'9','_','[',']','.','=','(',')'"
 
+#define MAX_PLAYER_PASSWORD      30
 #define MAX_PLAYER_LOGIN_ATTEMPT 3
 #define MAX_LOGIN_TIME           120
+
+#define PASSWORD_SALT_LENGTH  12
+#define PASSWORD_HASH_LENGTH  64
+
+#define DEFAULT_ALPHABET "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
 
 #define MAX_MONEY_CASH    1000000000
 #define MAX_MONEY_BANK    1000000000

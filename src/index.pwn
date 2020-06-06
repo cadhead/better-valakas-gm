@@ -12,6 +12,7 @@
 #include "./store/index"
 
 #include "./lib/colors"
+#include "./lib/vSyncALS"
 
 main() {
   DB_Connect(DB_HOST, DB_USER, DB_PASS, DB_DBNAME);

@@ -14,6 +14,17 @@ sampctl package get cadhead/better-valakas-gm
 sampctl package build
 ```
 
+## Run
+
+```bash
+sampctl s run
+```
+or
+
+```bash
+./samp-server
+```
+
 ## Development
 
 ```bash

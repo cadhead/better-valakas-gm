@@ -2,7 +2,8 @@
 	"user": "cadhead",
 	"repo": "better-valakas-gm",
 	"entry": "src\\index.pwn",
-	"output": "gamemodes\\better-valakas.amx",
+	"output": "gamemodes\\bvgm.amx",
+	"local": true,
 	"dependencies": [
 		"sampctl/samp-stdlib",
 		"pBlueG/SA-MP-MySQL",
@@ -17,7 +18,7 @@
 	"runtime": {
 		"version": "0.3.7",
 		"mode": "server",
-		"echo": "-",
+		"echo": "Reading config...",
 		"rcon_password": "s1Gk$gA;%gb48Sj",
 		"port": 7777,
 		"hostname": "SA-MP Server",
