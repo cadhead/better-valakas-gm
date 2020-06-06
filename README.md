@@ -4,8 +4,6 @@
 
 ## Installation
 
-Simply install to your project:
-
 ```bash
 sampctl package install cadhead/better-valakas-gm
 ```
