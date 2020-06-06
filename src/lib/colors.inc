@@ -1,8 +1,8 @@
-#if defined _colors_included
+#if defined _lib_colors_included
 	#endinput
 #endif
 
-#define _colors_included
+#define _lib_colors_included
 
 #define COLOR_WHITE      0xFFFCFCFF
 #define COLOR_GREY       0xBFC0C2FF

@@ -4,6 +4,12 @@
 
 #define _config_included
 
+#define DB_HOST    "remotemysql.com"
+#define DB_PORT    "3306"
+#define DB_USER    "j91PWkM3Xp"
+#define DB_PASS    "nrDGCaFZZd"
+#define DB_DBNAME  "j91PWkM3Xp"
+
 #define MAX_STRING   128
 #define MAX_UCP_NAME 30
 #define MAX_IP       16
