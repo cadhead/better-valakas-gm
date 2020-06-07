@@ -2,8 +2,8 @@
  *  Events
  */
 
-forward OnPlayerRegistered(playerid);
 forward OnPlayerDataLoad(playerid);
+forward OnRegisteredPlayerConnect(playerid);
 
 /*
  *  Database

@@ -10,6 +10,11 @@
 #define DB_PASS    "nrDGCaFZZd"
 #define DB_DBNAME  "j91PWkM3Xp"
 
+#if defined MAX_PLAYERS
+	#undef MAX_PLAYERS
+	#define MAX_PLAYERS 150
+#endif
+
 #define MAX_STRING   128
 #define MAX_UCP_NAME 30
 #define MAX_IP       16
@@ -66,6 +71,14 @@
 #define FACTION_MAX_RANKS   20
 #define FACTION_MAX_BANK    1000000000
 #define FACTION_MAX_MOTD    64
+
+#define DEFAULT_CHARACTER_POS_X     1715.7280
+#define DEFAULT_CHARACTER_POS_Y     -1936.9874
+#define DEFAULT_CHARACTER_POS_Z     13.5833
+#define DEFAULT_CHARACTER_POS_A     2.0400
+#define DEFAULT_CHARACTER_POS_WORLD 0
+#define DEFAULT_CHARACTER_POS_INT   0
+#define DEFAULT_CHARACTER_CASH      500
 
 enum CoordInfo {
 	Float:Coord_X,

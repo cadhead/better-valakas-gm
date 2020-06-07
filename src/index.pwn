@@ -8,12 +8,18 @@
 #include <mdialog>
 #include <zmessage>
 
-#include "./config"
-#include "./headers"
-#include "./store/index"
-
 #include "./lib/colors"
 #include "./lib/vSyncALS"
+#include "./lib/dc_kickfix"
+
+#include "./config"
+#include "./headers"
+#include "./data/index"
+
+#include "./players/index"
+
+#undef format
+#define format formatex
 
 main() {
   DB_Connect(DB_HOST, DB_USER, DB_PASS, DB_DBNAME);
@@ -26,15 +32,19 @@ public OnGameModeInit() {
   EnableStuntBonusForAll(0);
   // DisableInteriorEnterExits();
 
-  AddPlayerClass(2, 1958.3783, 1343.1572, 15.3746, 269.1425, 0, 0, 0, 0, 0, 0);
+  AddPlayerClass(2,1715.7280,-1936.9874,13.5833,2.0400,0,0,0,0,0,0);
 
   return 1;
 }
 
 public OnPlayerConnect(playerid) {
-  if (IsPlayerLogged(playerid)) {
-    print("hello world!");
-  }
+  SetCharacterInfo(playerid);
+
+  return 1;
+}
+
+public OnPlayerDisconnect(playerid, reason) {
+  ClearCharacterInfo(playerid);
 
   return 1;
 }
