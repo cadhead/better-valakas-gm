@@ -9,6 +9,7 @@
 #include <zmessage>
 
 #include "./config"
+#include "./headers"
 #include "./store/index"
 
 #include "./lib/colors"
@@ -31,5 +32,9 @@ public OnGameModeInit() {
 }
 
 public OnPlayerConnect(playerid) {
+  if (IsPlayerLogged(playerid)) {
+    print("hello world!");
+  }
+
   return 1;
 }

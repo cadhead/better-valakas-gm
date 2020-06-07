@@ -8,7 +8,7 @@
 
 static MySQL:gConnectionHandle;
 
-stock DB_Connect(const host[], const user[], const pass[], const db[]) {
+public DB_Connect(const host[], const user[], const pass[], const db[]) {
   gConnectionHandle = mysql_connect(host, user, pass, db);
 
   mysql_log();
@@ -19,10 +19,10 @@ stock DB_Connect(const host[], const user[], const pass[], const db[]) {
   ;
 }
 
-stock DB_ConnectionClose() {
+public DB_ConnectionClose() {
   return mysql_close(gConnectionHandle);
 }
 
-stock DB_GetHandle() {
+public MySQL:DB_GetHandle() {
   return gConnectionHandle;
 }
