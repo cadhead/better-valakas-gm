@@ -3,18 +3,18 @@
 	"repo": "better-valakas-gm",
 	"entry": "src\\index.pwn",
 	"output": "gamemodes\\bvgm.amx",
-	"local": true,
 	"dependencies": [
 		"sampctl/samp-stdlib",
 		"pBlueG/SA-MP-MySQL",
 		"samp-incognito/samp-streamer-plugin",
 		"maddinat0r/sscanf",
-		"urShadow/Pawn.CMD",
 		"Open-GTO/mdialog",
 		"Open-GTO/zmessage",
 		"Southclaws/formatex",
-		"karimcambridge/samp-foreach"
+		"karimcambridge/samp-foreach",
+		"urShadow/Pawn.CMD"
 	],
+	"local": true,
 	"runtime": {
 		"version": "0.3.7",
 		"mode": "server",

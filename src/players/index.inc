@@ -1,29 +1,30 @@
+#if defined __players_included
+	#endinput
+#endif
+
+#define __players_included
+
 #include "./players/account"
+//#include "./players/character"
+#include "./players/temp-reg"
 
-public OnRegisteredPlayerConnect(playerid) {
-  SetSpawnInfo(playerid,
-    NO_TEAM,
-    gCharacter[playerid][e_Skin],
-    gCharacter[playerid][e_PosX],
-    gCharacter[playerid][e_PosY],
-    gCharacter[playerid][e_PosZ],
-    gCharacter[playerid][e_PosA],
-    0, 0, 0, 0, 0, 0
-  );
-
-  SpawnPlayer(playerid);
-
-  GivePlayerMoney(playerid, gCharacter[playerid][e_Cash]);
-  CreateVehicle(
-    522,
-    gCharacter[playerid][e_PosX],
-    gCharacter[playerid][e_PosY],
-    gCharacter[playerid][e_PosZ],
-    gCharacter[playerid][e_PosA],
-    0,
-    0,
-    0
-  );
+public OnPlayerRequestAuth(playerid, error) {
+  switch (error) {
+    case ACCOUNT_DATA_ERROR_OK: {
+      Dialog_Show(playerid, Dialog:Login);
+    }
+    case ACCOUNT_DATA_ERROR_NOT_EXIST: {
+      #if ALLOW_INGAME_REGISTRATION
+        Dialog_Show(playerid, Dialog:Registration);
+      #else
+        ShowAuthMessage(playerid, AUTH_MESSAGE_NOT_EXIST);
+      #endif
+    }
+    default: {
+      ShowAuthMessage(playerid, AUTH_MESSAGE_WHOKNOWS);
+      Kick(playerid);
+    }
+  }
 
   return 1;
 }

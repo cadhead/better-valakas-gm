@@ -1,9 +1,10 @@
-#if defined _store_included
+#if defined _data_included
 	#endinput
 #endif
 
-#define _store_included
+#define _data_included
 
+#include "./data/account"
 #include "./data/character"
 
 static MySQL:gConnectionHandle;
@@ -14,11 +15,11 @@ public DB_Connect(const host[], const user[], const pass[], const db[]) {
 
   gConnectionHandle = mysql_connect(host, user, pass, db);
 
-  mysql_log();
+  mysql_log(ALL);
 
-  printf("Database %s", mysql_errno() == -1 
-    ? ("was not connected.") 
-    : ("sucessfuly connected."))
+  printf("%s to database.", mysql_errno() == -1 
+    ? ("Can't connect to") 
+    : ("Successfully connected"))
   ;
 }
 
