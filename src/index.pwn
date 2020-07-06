@@ -45,7 +45,7 @@ public OnGameModeInit() {
 }
 
 public OnPlayerConnect(playerid) {
-  FetchCharacterData(playerid);
+  FetchAccountData(playerid);
 
   return 1;
 }

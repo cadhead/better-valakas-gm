@@ -5,7 +5,7 @@
 #define __players_included
 
 #include "./players/account"
-//#include "./players/character"
+#include "./players/character"
 #include "./players/temp-reg"
 
 public OnPlayerRequestAuth(playerid, error) {

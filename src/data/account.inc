@@ -4,8 +4,8 @@
 
 #define _data_acc_included
 
-#define ACCOUNT_DATA_ERROR_OK        0
-#define ACCOUNT_DATA_ERROR_NOT_EXIST 1
+#define ACCOUNT_DATA_ERROR_OK        1
+#define ACCOUNT_DATA_ERROR_NOT_EXIST 2
 
 enum {
 	PLAYER_GROUP_DEFAULT,
@@ -16,16 +16,16 @@ enum {
 }
 
 enum e_Account_Info {
-  e_ID,
-  e_Username[MAX_PLAYER_NAME + 1],
-	e_PassHash,
-	e_PassSalt,
-	e_RegisterDate,
-	e_LoginDate,
-	e_IP,
-	e_PlayerGroup,
-	e_ALevel,
-	e_PLevel
+  e_aID,
+  e_aUsername[MAX_PLAYER_NAME + 1],
+	e_aPassHash,
+	e_aPassSalt,
+	e_aRegisterDate,
+	e_aLoginDate,
+	e_aIP,
+	e_aPlayerGroup,
+	e_aALevel,
+	e_aPLevel
 }
 
 new Account[MAX_PLAYERS][e_Account_Info];
@@ -55,12 +55,18 @@ stock FetchAccountData(playerid) {
 		DB_GetHandle(),
 		string,
 		sizeof string,
-		"SELECT * FROM `accounts` WHERE `ID` = '%d' LIMIT 1",
-		Character[playerid][e_cUCP]
+		"SELECT * FROM `accounts` WHERE `Username` = '%e' LIMIT 1",
+		Account[playerid][e_aUsername]
 	);
 	mysql_tquery(DB_GetHandle(), string, "SetAccountData", "i", playerid);
 }
 
 stock SetAccountData(playerid) {
-	
+	if (cache_num_rows() == 0) {
+		OnPlayerRequestAuth(playerid, ACCOUNT_DATA_ERROR_NOT_EXIST);
+	} else if (cache_num_rows() >= 1) {
+		OnPlayerRequestAuth(playerid, ACCOUNT_DATA_ERROR_OK);
+	} else {
+		OnPlayerRequestAuth(playerid, 0);
+	}
 }
